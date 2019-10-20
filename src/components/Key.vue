@@ -1,16 +1,11 @@
 <template>
-	<button>{{ buttonString }}</button>
+	<button @click="$emit( 'morse-symbol-pressed', morseSymbol )">{{ morseSymbol }}</button>
 </template>
 
 <script>
 export default {
 	name: 'Key',
-	props: [ 'letter', 'code' ],
-	computed: {
-		buttonString() {
-			return this.letter + ' ' + this.code;
-		}
-	}
+	props: [ 'morseSymbol' ]
 };
 </script>
 

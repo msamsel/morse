@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<h2>Keyboard</h2>
-		<div v-for="(value, key, index) in keyButtons" :key="index">
-			<Key :letter="key" :code="value" />
+		<div v-for="morseSymbol in availableMorseSymbols" :key="morseSymbol">
+			<Key :morseSymbol="morseSymbol" @morse-symbol-pressed="keyPressedListener"/>
 		</div>
 	</div>
 </template>
@@ -12,13 +12,21 @@ import Key from './Key.vue';
 
 export default {
 	name: 'Keyboard',
-	props: [ 'keyButtons' ],
+	props: [ 'availableMorseSymbols' ],
 	components: {
 		Key
+	},
+	methods: {
+		keyPressedListener( morseSymbol ) {
+			window.console.log( morseSymbol );
+		}
 	}
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+button {
+	display: inline-block;
 
+}
 </style>

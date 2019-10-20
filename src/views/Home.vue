@@ -1,10 +1,10 @@
 <template>
-	<Keyboard :keyButtons="morseCodesMap" />
+	<Keyboard :availableMorseSymbols="availableMorseSymbols" />
 </template>
 
 <script>
 import Keyboard from '../components/Keyboard.vue';
-import { morseCodes } from '../utils/utils';
+import { getMorseSymbols } from '../utils/utils';
 
 export default {
 	name: 'Home',
@@ -13,7 +13,7 @@ export default {
 	},
 	data() {
 		return {
-			morseCodesMap: morseCodes
+			availableMorseSymbols: getMorseSymbols()
 		};
 	}
 };

@@ -1,4 +1,4 @@
-export const morseCodes = {
+export const morseSymbolsMap = {
 	'A': '•—',
 	'B': '—•••',
 	'C': '—•—•',
@@ -36,3 +36,7 @@ export const morseCodes = {
 	'8': '———••',
 	'9': '————•'
 };
+
+export function getMorseSymbols() {
+	return Object.keys( morseSymbolsMap );
+}
