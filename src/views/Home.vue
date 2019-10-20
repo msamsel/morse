@@ -11,7 +11,7 @@
 <script>
 import Keyboard from '../components/Keyboard.vue';
 import Preview from '../components/Preview.vue';
-import { getMorseSymbols } from '../utils/utils';
+import { getMorseSymbols, symbolToMorseCode } from '../utils/utils';
 
 export default {
 	name: 'Home',
@@ -27,7 +27,7 @@ export default {
 	},
 	methods: {
 		morseSymbolPressedListener( morseSymbol ) {
-			this.previewItems.push( morseSymbol );
+			this.previewItems.push( symbolToMorseCode( morseSymbol ) );
 			window.console.log( morseSymbol );
 		}
 	}

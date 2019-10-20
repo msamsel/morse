@@ -40,3 +40,7 @@ export const morseSymbolsMap = {
 export function getMorseSymbols() {
 	return Object.keys( morseSymbolsMap );
 }
+
+export function symbolToMorseCode( symbol ) {
+	return morseSymbolsMap[ symbol ];
+}

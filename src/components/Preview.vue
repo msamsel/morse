@@ -21,7 +21,7 @@ export default {
 
 <style scoped>
 	.preview-wrapper {
-		height: 2em;
+		min-height: 2em;
 		border: 1px solid var( --main-dark-color );
 		margin: 0.2em;
 	}

@@ -9,6 +9,8 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+	code {
+		margin: 0 0.3em;
+	}
 </style>
