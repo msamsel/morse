@@ -1,9 +1,12 @@
 <template>
 	<div>
 		<h2>Keyboard</h2>
-		<div v-for="morseSymbol in availableMorseSymbols" :key="morseSymbol">
-			<Key :morseSymbol="morseSymbol" @morse-symbol-pressed="keyPressedListener"/>
-		</div>
+		<Key
+			v-for="morseSymbol in availableMorseSymbols"
+			:key="morseSymbol"
+			:morseSymbol="morseSymbol"
+			@morse-symbol-pressed="keyPressedListener"
+		/>
 	</div>
 </template>
 
