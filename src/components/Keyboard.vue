@@ -5,7 +5,7 @@
 			v-for="morseSymbol in availableMorseSymbols"
 			:key="morseSymbol"
 			:morseSymbol="morseSymbol"
-			@morse-symbol-pressed="keyPressedListener"
+			@morse-symbol-pressed="morseSymbolPressedListener"
 		/>
 	</div>
 </template>
@@ -20,8 +20,8 @@ export default {
 		Key
 	},
 	methods: {
-		keyPressedListener( morseSymbol ) {
-			window.console.log( morseSymbol );
+		morseSymbolPressedListener( morseSymbol ) {
+			this.$emit( 'morse-symbol-pressed', morseSymbol );
 		}
 	}
 };
@@ -30,6 +30,5 @@ export default {
 <style scoped lang="scss">
 button {
 	display: inline-block;
-
 }
 </style>

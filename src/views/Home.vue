@@ -1,5 +1,8 @@
 <template>
-	<Keyboard :availableMorseSymbols="availableMorseSymbols" />
+	<Keyboard
+		:availableMorseSymbols="availableMorseSymbols"
+		@morse-symbol-pressed="morseSymbolPressedListener"
+	/>
 </template>
 
 <script>
@@ -15,6 +18,11 @@ export default {
 		return {
 			availableMorseSymbols: getMorseSymbols()
 		};
+	},
+	methods: {
+		morseSymbolPressedListener( morseSymbol ) {
+			window.console.log( morseSymbol );
+		}
 	}
 };
 </script>
